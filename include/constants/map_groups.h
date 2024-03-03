@@ -63,6 +63,13 @@
 #define MAP_UNDERWATER_ROUTE129 (54 | (0 << 8))
 #define MAP_UNDERWATER_ROUTE105 (55 | (0 << 8))
 #define MAP_UNDERWATER_ROUTE125 (56 | (0 << 8))
+#define MAP_VANIVILLE_TOWN      (57 | (0 << 8))
+#define MAP_ROUTE1              (58 | (0 << 8))
+#define MAP_AQUACORDE_TOWN      (59 | (0 << 8))
+#define MAP_ROUTE2              (60 | (0 << 8))
+#define MAP_SANTALUNE_FOREST    (61 | (0 << 8))
+#define MAP_ROUTE3              (62 | (0 << 8))
+#define MAP_SANTALUNE_CITY      (63 | (0 << 8))
 
 // gMapGroup_IndoorLittleroot
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (0 | (1 << 8))
@@ -70,6 +77,23 @@
 #define MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F        (2 | (1 << 8))
 #define MAP_LITTLEROOT_TOWN_MAYS_HOUSE_2F        (3 | (1 << 8))
 #define MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB (4 | (1 << 8))
+#define MAP_NEW_MAP1                             (5 | (1 << 8))
+#define MAP_AQUACORDE_TOWN_LBUILDING1            (6 | (1 << 8))
+#define MAP_AQUACORDE_TOWN_LBUILDING2            (7 | (1 << 8))
+#define MAP_AQUACORDE_TOWN_SBUILDING1            (8 | (1 << 8))
+#define MAP_AQUACORDE_TOWN_POTION_SHOP           (9 | (1 << 8))
+#define MAP_AQUACORDE_TOWN_POKEBALL_SHOP         (10 | (1 << 8))
+#define MAP_AQUACORDE_TOWN_POKE_CENTER           (11 | (1 << 8))
+#define MAP_SANTALUNE_CITY_BUILDING1             (12 | (1 << 8))
+#define MAP_SANTALUNE_CITY_BUILDING2             (13 | (1 << 8))
+#define MAP_SANTALUNE_CITY_BUILDING3             (14 | (1 << 8))
+#define MAP_NEW_MAP2                             (15 | (1 << 8))
+#define MAP_SANTALUNE_CITY_POKE_CENTER           (16 | (1 << 8))
+#define MAP_SANTALUNE_CITY_BERRY_SHOP            (17 | (1 << 8))
+#define MAP_SANTALUNE_CITY_TRAINER_SCHOOL        (18 | (1 << 8))
+#define MAP_OPENING_SCENE                        (19 | (1 << 8))
+#define MAP_SANTALUNE_CITY_GYM1                  (20 | (1 << 8))
+#define MAP_SANTALUNE_CITY_GYM2                  (21 | (1 << 8))
 
 // gMapGroup_IndoorOldale
 #define MAP_OLDALE_TOWN_HOUSE1            (0 | (2 << 8))
@@ -115,6 +139,7 @@
 #define MAP_VERDANTURF_TOWN_WANDAS_HOUSE            (6 | (6 << 8))
 #define MAP_VERDANTURF_TOWN_FRIENDSHIP_RATERS_HOUSE (7 | (6 << 8))
 #define MAP_VERDANTURF_TOWN_HOUSE                   (8 | (6 << 8))
+#define MAP_SANTALUNE_CITY_CAFE                     (9 | (6 << 8))
 
 // gMapGroup_IndoorPacifidlog
 #define MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_1F (0 | (7 << 8))

@@ -1,0 +1,13 @@
+mapscripts Route2_MapScripts {}
+
+script Route2_SignScript_Forest {
+    lockall
+    msgbox(format("Santalune Forest Ahead"))
+    waitmessage
+    release
+}
+
+
+
+
+

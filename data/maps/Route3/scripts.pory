@@ -1,0 +1,19 @@
+mapscripts Route3_MapScripts {}
+
+
+// signs
+script Route3_SignScript_Enter {
+    lockall
+    msgbox(format("Route 3\nAlso known as Ouvert Way"))
+    waitmessage
+    release
+}
+
+// objects - npcs
+script Route3_ObjectScript_LittleGirl {
+    lockall
+    faceplayer
+    msgbox(format("I went to the Pokemon Center 'cause I was asked to buy Pokeballs"))
+    waitmessage
+    release
+}

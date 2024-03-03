@@ -1,0 +1,305 @@
+raw `
+SantaluneCity_BradfordTradeSequence::
+
+    lock
+    faceplayer
+    goto_if_set FLAG_INGAME_BRADFORD_TRADE, SantaluneCity_ObjectScript_BradfordTradeCompleted
+
+    setvar VAR_0x8008, INGAME_TRADE_MELTAN
+    copyvar VAR_0x8004, VAR_0x8008
+    specialvar VAR_0x8009, GetInGameTradeSpeciesInfo
+    msgbox SantaluneCity_ObjectScript_BradfordBeforeTrade_Text, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, NO, SantaluneCity_ObjectScript_BradfordTradeDecline
+
+    special ChoosePartyMon
+    waitstate
+    goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, SantaluneCity_ObjectScript_BradfordTradeDecline
+    copyvar VAR_0x8005, VAR_0x8004
+    specialvar VAR_RESULT, GetTradeSpecies
+    goto_if_ne VAR_RESULT, VAR_0x8009, SantaluneCity_ObjectScript_BradfordTradeWrongMon
+
+    copyvar VAR_0x8004, VAR_0x8008
+    special CreateInGameTradePokemon
+    special DoInGameTradeScene
+    waitstate
+
+    msgbox SantaluneCity_ObjectScript_BradfordTradeThanks_Text, MSGBOX_DEFAULT
+    setflag FLAG_INGAME_BRADFORD_TRADE
+    release
+    end
+
+
+
+SantaluneCity_ObjectScript_BradfordTradeCompleted::
+    msgbox SantaluneCity_ObjectScript_BradfordTradeCompleted_Text, MSGBOX_DEFAULT
+    release
+    end
+
+SantaluneCity_ObjectScript_BradfordTradeWrongMon::
+    bufferspeciesname STR_VAR_1, VAR_0x8009
+    msgbox SantaluneCity_ObjectScript_BradfordTradeWrongMon_Text, MSGBOX_DEFAULT
+    release
+    end
+
+SantaluneCity_ObjectScript_BradfordTradeDecline::
+    msgbox SantaluneCity_ObjectScript_BradfordTradeDecline_Text, MSGBOX_DEFAULT
+    release
+    end
+
+SantaluneCity_ObjectScript_BradfordTradeCompleted_Text::
+    .string "I hope you're treating Rivet well!$"
+
+SantaluneCity_ObjectScript_BradfordBeforeTrade_Text::
+    .string "Are you interested in a Meltan?\n"
+    .string "I'll trade you it for a Stunky!$"
+
+SantaluneCity_ObjectScript_BradfordTradeDecline_Text:: 
+    .string "How unfortunate.$"
+
+SantaluneCity_ObjectScript_BradfordTradeWrongMon_Text::
+    .string "That's not what I'm looking for!$"
+
+SantaluneCity_ObjectScript_BradfordTradeThanks_Text::
+    .string "Thank you!$"
+
+`
+
+
+mapscripts SantaluneCity_MapScripts {}
+
+// signs
+
+script SantaluneCity_SignScript_Forest {
+    lockall
+    msgbox(format("Santalune Forest Ahead"))
+    waitmessage
+    release
+}
+
+// object - indoor npcs
+
+script SantaluneCity_ObjectScript_HappinessGirl {
+    lockall
+    faceplayer
+    msgbox(format("If you love your Pokemon, even if it changes its appearance, you'll stay connected with it."))
+    msgbox(format("Let's see...\nOh wait, I forgot. Happiness isn't in this hack. Happiness Pokemon now evolve by level up and Return is base 102 power! Isn't that neat!"))
+    waitmessage
+    release
+}
+
+script SantaluneCity_ObjectScript_EvoGirl {
+    lockall
+    faceplayer
+    if(flag(FLAG_EVERSTONE) == FALSE) {
+        msgbox(format("When a Pokemon is evolving and you don't want it to, try pressing the B Button!"))
+        msgbox(format("Or just take this..."))
+        giveitem(ITEM_EVERSTONE)
+        setflag(FLAG_EVERSTONE)
+    } else {
+        msgbox(format("Aren't Everstones neat!"))
+    }
+    waitmessage
+    release
+}
+
+script SantaluneCity_ObjectScript_BoyBug {
+    lockall
+    faceplayer
+    msgbox(format("The Gym Leader in this city is the fantastic photographer--Viola! I'll have to go find some Bug-type Pokemon if I want to have any of my pictures displayed in the Gym!"))
+    waitmessage
+    release
+} 
+
+script SantaluneCity_ObjectScript_WomanTrade {
+    lockall
+    faceplayer
+    msgbox(format("Pokemon that you get from trades tend to grow easily, and they quickly get stronger. But you know, if you don't have enough Gym Badges, they might not listen to your orders!"))
+    waitmessage
+    release
+} 
+
+script SantaluneCity_ObjectScript_BerryShop {
+    lock
+	message(format("Are you looking for berries?"))
+	waitmessage
+	pokemart(SantaluneBerryShopItems)
+	msgbox("Please come again!")
+	release
+}
+
+mart SantaluneBerryShopItems {
+	ITEM_ORAN_BERRY
+    ITEM_CHERI_BERRY
+    ITEM_CHESTO_BERRY
+    ITEM_PECHA_BERRY
+    ITEM_RAWST_BERRY
+    ITEM_ASPEAR_BERRY
+}
+
+script SantaluneCity_ObjectScript_BerryWoman {
+    lockall
+    faceplayer
+    msgbox(format("I still remember my own first big adventure. I went all the way to the next town with my Pokemon. I'd heard that wild Pokemon jump out at people... I can still feel my heart racing like it was yesterday!"))
+    waitmessage
+    release
+} 
+
+script SantaluneCity_ObjectScript_BerryBoy {
+    lockall
+    faceplayer
+    msgbox(format("This place is so basic..."))
+    waitmessage
+    release
+}  
+
+script SantaluneCity_ObjectScript_Mart {
+    lock
+	message(format("Welcome to the Poke Mart!\nMay I help you?"))
+	waitmessage
+	pokemart(SantaluneCityMartShopItems)
+	msgbox("Please come again!")
+	release
+}
+
+mart SantaluneCityMartShopItems {
+	ITEM_POTION
+    ITEM_SUPER_POTION
+    ITEM_HYPER_POTION
+    ITEM_POKE_BALL
+    ITEM_GREAT_BALL
+    ITEM_ULTRA_BALL
+}
+
+script SantaluneCity_ObjectScript_MartBoy {
+    lockall
+    faceplayer
+    msgbox(format("A Great Ball is just a really great Pokeball! Get it? It makes it even easier to catch Pokemon!"))
+    waitmessage
+    release
+}  
+
+script SantaluneCity_ObjectScript_Twin1 {
+    lockall
+    faceplayer
+    msgbox(format("Aww, I wanna catch a Pikachu, too! So lucky! Pika, pika, pika!"))
+    waitmessage
+    release
+}  
+
+script SantaluneCity_ObjectScript_Twin2 {
+    lockall
+    faceplayer
+    msgbox(format("Did you see any Pikachu in Santalune Forest? I really want to become friends with a Pikachu!"))
+    waitmessage
+    release
+}  
+
+script SantaluneCity_ObjectScript_CenterHiker {
+    lockall
+    faceplayer
+    msgbox(format("Pokemon are easier to catch if you make them sleep or paralyze them first!"))
+    waitmessage
+    release
+}  
+
+script SantaluneCity_ObjectScript_PickleGirl {
+    lockall
+    faceplayer
+    msgbox(format("I sure do love pickles!"))
+    waitmessage
+    release
+} 
+
+script SantaluneCity_ObjectScript_CafeCook {
+    lock
+	message(format("I have traveled the world for the best tastes, what can I serve you?"))
+	waitmessage
+	pokemart(SantaluneCityCafeItems)
+	msgbox("Please come again!")
+	release
+}
+
+mart SantaluneCityCafeItems {
+	ITEM_PEWTER_CRUNCHIES
+    ITEM_RAGE_CANDY_BAR
+    ITEM_LAVA_COOKIE
+    ITEM_OLD_GATEAU
+    ITEM_CASTELIACONE
+    ITEM_LUMIOSE_GALETTE
+    ITEM_SHALOUR_SABLE
+    ITEM_BIG_MALASADA
+}
+
+script SantaluneCity_ObjectScript_SchoolBoy1 {
+    lockall
+    faceplayer
+    msgbox(format("You've got your Pokemon holding items like you know what's going on, right?"))
+    waitmessage
+    release
+}  
+
+script SantaluneCity_ObjectScript_SchoolGirl1 {
+    lockall
+    faceplayer
+    msgbox(format("Moves have types, too, you know? If your Pokemon uses a move that's the same type as the Pokemon, that move's power will go up!"))
+    waitmessage
+    release
+}  
+
+script SantaluneCity_ObjectScript_SchoolGirl2 {
+    lockall
+    faceplayer
+    msgbox(format("Type matchups, huh? So, Water is good for Fire, and Fire works well against Grass...\nAnd Grass is strong against Water--right!"))
+    waitmessage
+    release
+}  
+
+script SantaluneCity_ObjectScript_SchoolBoy2 {
+    lockall
+    faceplayer
+    msgbox(format("Even if you catch a wild Pokemon, your team's Pokemon will still grow. I know it because one of my Pokemon leveled up when it was fighting a battle like that!"))
+    waitmessage
+    release
+} 
+
+// object - outdoor npcs
+
+script SantaluneCity_ObjectScript_OutsideFatman {
+    lockall
+    faceplayer
+    msgbox(format("Walking through tall grass is great fun. All kinds of Pokemon jump out at you!"))
+    waitmessage
+    release
+}  
+
+script SantaluneCity_ObjectScript_OutsideGirl1 {
+    lockall
+    faceplayer
+    msgbox(format("Pokemon sure are mysterious! I learned all kinds of things at the Trainers' School. It was surprising!"))
+    waitmessage
+    release
+}  
+
+script SantaluneCity_ObjectScript_OutsideLittleGirl {
+    lockall
+    faceplayer
+    msgbox(format("Pokemon love yummy treats just as much as you or me!"))
+    waitmessage
+    release
+}  
+
+script SantaluneCity_ObjectScript_OutsideGirl2 {
+    lockall
+    faceplayer
+    msgbox(format("What can Trainers do to reward their Pokemon for working hard?"))
+    waitmessage
+    release
+}  
+
+script SantaluneCity_ObjectScript_OutsideGirl3 {
+    lockall
+    faceplayer
+    msgbox(format("If you master type matchups, then even strong opponents will be a breeze for you to beat!"))
+    waitmessage
+    release
+}  

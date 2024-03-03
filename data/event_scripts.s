@@ -1067,3 +1067,54 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/frontier_brain.inc"
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
+
+
+	.include "data/maps/VanivilleTown/scripts.inc"
+
+	.include "data/maps/Route1/scripts.inc"
+
+	.include "data/maps/AquacordeTown/scripts.inc"
+
+	.include "data/maps/Route2/scripts.inc"
+
+	.include "data/maps/SantaluneForest/scripts.inc"
+
+	.include "data/maps/Route3/scripts.inc"
+
+	.include "data/maps/SantaluneCity/scripts.inc"
+
+	.include "data/maps/NewMap1/scripts.inc"
+
+	.include "data/maps/AquacordeTown_LBuilding1/scripts.inc"
+
+	.include "data/maps/AquacordeTown_LBuilding2/scripts.inc"
+
+	.include "data/maps/AquacordeTown_SBuilding1/scripts.inc"
+
+	.include "data/maps/AquacordeTown_PotionShop/scripts.inc"
+
+	.include "data/maps/AquacordeTown_PokeballShop/scripts.inc"
+
+	.include "data/maps/AquacordeTown_PokeCenter/scripts.inc"
+
+	.include "data/maps/SantaluneCity_Building1/scripts.inc"
+
+	.include "data/maps/SantaluneCity_Building2/scripts.inc"
+
+	.include "data/maps/SantaluneCity_Building3/scripts.inc"
+
+	.include "data/maps/NewMap2/scripts.inc"
+
+	.include "data/maps/SantaluneCity_PokeCenter/scripts.inc"
+
+	.include "data/maps/SantaluneCity_BerryShop/scripts.inc"
+
+	.include "data/maps/SantaluneCity_TrainerSchool/scripts.inc"
+
+	.include "data/maps/Opening_Scene/scripts.inc"
+
+	.include "data/maps/SantaluneCity_Cafe/scripts.inc"
+
+	.include "data/maps/SantaluneCity_Gym1/scripts.inc"
+
+	.include "data/maps/SantaluneCity_Gym2/scripts.inc"

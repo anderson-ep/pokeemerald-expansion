@@ -1,0 +1,194 @@
+mapscripts AquacordeTown_MapScripts {}
+
+
+script AquacordeTown_ObjectScript_Woman {
+    lockall
+    faceplayer
+    msgbox("Do you love Pokemon?", MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        msgbox(format("Me too! Aren't they great?"))
+    } else {
+        msgbox(format("kys"))
+    }
+    waitmessage
+    releaseall
+}
+
+script AquacordeTown_ObjectScript_MartEmployeeWander {
+    lockall
+    faceplayer
+    if(flag(FLAG_AQUACORDE_MART_EMPLOYEE) == FALSE){
+        msgbox("Take this!")
+        giveitem(ITEM_POTION)
+        setflag(FLAG_AQUACORDE_MART_EMPLOYEE)
+    } else {
+        msgbox(format("Potions can heal Pokemon, wherever and whenever!"))
+    }
+    waitmessage
+    releaseall
+}
+
+script AquacordeTown_ObjectScript_LittleGirl {
+    lockall
+    faceplayer
+    msgbox(format("I play with my Pokemon and pet it!"))
+    waitmessage
+    release
+}
+
+script AquacordeTown_ObjectScript_LittleBoy {
+    lockall
+    faceplayer
+    msgbox(format("My Pokemon and I are going to train really hard!"))
+    waitmessage
+    release
+}
+
+
+script AquacordeTown_ObjectScript_FatMan {
+    lockall
+    faceplayer
+    msgbox(format("You really think I'm just gonna hand over an item to you for free?"))
+    msgbox(format("Get the hell out of my house."))
+    waitmessage
+    release
+}
+
+script AquacordeTown_ObjectScript_GayMan1 {
+    lockall
+    msgbox(format("scrubscrubscrubscrubscrubscrubscrubscrub"))
+    waitmessage
+    release
+}
+
+script AquacordeTown_ObjectScript_GayMan2 {
+    lockall
+    faceplayer
+    if(flag(FLAG_DRACULA_FLOW) == FALSE) {
+        msgbox(format("I’m moving different. This shit ain’t nothing to me man, I’m a dog. I’m biting the fart bubbles in the bath We smoking Symbiote Smoking that Whoopi Goldberg South Egyptian fur burger Deluxe Mega Millions scratcher skunk bubba kush We smoking dung beetle I’m on 12 vicodins, smoking on Scooby-Doo dick We smoking Sequoia banshee boogers We snorting that good Buffalo Soldier tamarind Jordanian gibbies They must have amnesia, they forgot that I’m him."))
+        giveitem(ITEM_COVERT_CLOAK)
+        setflag(FLAG_DRACULA_FLOW)
+    } else {
+        msgbox(format("This shit ain't nothing to me you stupid piece of shit Step the wrong way and you will perish That pussy feel like Biscoff Butter You think I care about this shit? Ask me if I care about this shit, cause I don't give a shit If I had a dollar for every time they said I gave a shit, I'd be broke cause I don't give a shit My bitch look like David Hasselhoff I balled so hard they thought I was a fucking nutsack This shit ain't nothing to me man, I'll kill you, you stupid piece of shit"))
+    }
+    waitmessage
+    release
+}
+
+script AquacordeTown_ObjectScript_PokeballMart {
+    lock
+	message(format("Welcome! This is a specialized shop that sells only Poke Balls."))
+	waitmessage
+	pokemart(PokeballMartItems)
+	msgbox("Please come again!")
+	release
+}
+
+mart PokeballMartItems {
+	ITEM_POKE_BALL
+    ITEM_GREAT_BALL
+    ITEM_ULTRA_BALL
+}
+
+script AquacordeTown_ObjectScript_MartLittleGirl {
+    lockall
+    faceplayer
+    msgbox(format("Pokemon you catch in a Pokeball become your friends!"))
+    waitmessage
+    release
+}
+
+script AquacordeTown_ObjectScript_MartGirl {
+    lockall
+    faceplayer
+    msgbox(format("Bags are mysterious! Bags are great!"))
+    msgbox(format("They automatically sort items put in them by the kind of item!"))
+    waitmessage
+    release
+}
+
+script AquacordeTown_ObjectScript_PotionMart {
+    lock
+	message(format("Welcome! We sell only the best Potions!"))
+	waitmessage
+	pokemart(PotionMartItems)
+	msgbox("Please come again!")
+	release
+}
+
+mart PotionMartItems {
+	ITEM_POTION
+    ITEM_SUPER_POTION
+    ITEM_HYPER_POTION
+    ITEM_RARE_CANDY
+}
+
+script AquacordeTown_ObjectScript_PotionMartGirl {
+    lockall
+    faceplayer
+    msgbox(format("The Pokemon Center just past Santalune Forest will fix up your Pokemon for free!"))
+    waitmessage
+    release
+}
+
+script AquacordeTown_ObjectScript_PotionMartLittleBoy {
+    lockall
+    faceplayer
+    msgbox(format("Give Potions to weakened Pokemon!"))
+    waitmessage
+    release
+}
+
+script AquacordeTown_ObjectScript_Girl {
+    lockall
+    faceplayer
+    msgbox(format("If you want to be more fashionable, you might want to go to Santalune City!"))
+    msgbox(format("I've been buying the newest fashions at the boutique in Santalune City."))
+    waitmessage
+    release
+}
+
+script AquacordeTown_ObjectScript_Hiker {
+    lockall
+    faceplayer
+    msgbox(format("Hey there! Looks like you found somebody at home to help you pack!"))
+    msgbox(format("Oh, and make sure you bring a bunch of Pokeballs and Potions, all right?"))
+    waitmessage
+    release
+}
+
+script AquacordeTown_SignScript_PokeballShop {
+    lockall
+    msgbox(format("Pokeball Shop"))
+    waitmessage
+    release
+}
+
+script AquacordeTown_SignScript_PokeCenter {
+    lockall
+    msgbox(format("PokeCenter"))
+    waitmessage
+    release
+}
+
+script AquacordeTown_SignScript_PotionShop {
+    lockall
+    msgbox(format("Potion Shop"))
+    waitmessage
+    release
+}
+
+script AquacordeTown_SignScript_Bridge {
+    lockall
+    msgbox(format("Trainer Tips!"))
+    msgbox(format("Use the Endless Candy to level your Pokemon to the level cap!"))
+    waitmessage
+    release
+}
+
+script AquacordeTown_SignScript_Town {
+    lockall
+    msgbox(format("Aquacorde Town\nWater and civilization in harmony."))
+    waitmessage
+    release
+}

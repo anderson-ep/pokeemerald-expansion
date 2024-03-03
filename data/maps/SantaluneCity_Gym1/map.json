@@ -1,0 +1,69 @@
+{
+  "id": "MAP_SANTALUNE_CITY_GYM1",
+  "name": "SantaluneCity_Gym1",
+  "layout": "LAYOUT_SANTALUNE_CITY_GYM1",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+
+  ],
+  "warp_events": [
+    {
+      "x": 4,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_SANTALUNE_CITY",
+      "dest_warp_id": "8"
+    },
+    {
+      "x": 5,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_SANTALUNE_CITY",
+      "dest_warp_id": "8"
+    },
+    {
+      "x": 5,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_SANTALUNE_CITY_GYM2",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 4,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_SANTALUNE_CITY_GYM2",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_SANTALUNE_CITY_GYM2",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 4,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_SANTALUNE_CITY_GYM2",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

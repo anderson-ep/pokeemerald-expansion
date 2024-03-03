@@ -1,0 +1,22 @@
+mapscripts AquacordeTown_PokeCenter_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: AquacordeTown_PokeCenter_OnTransition
+    MAP_SCRIPT_ON_RESUME: CableClub_OnResume
+}
+
+script AquacordeTown_PokeCenter_OnTransition {
+    setrespawn(HEAL_LOCATION_AQUACORDE_TOWN)
+}
+
+script AquacordeTown_PokeCenter_Nurse {
+    setvar(VAR_0x800B, 1)
+    call(Common_EventScript_PkmnCenterNurse)
+    waitmessage
+    waitbuttonpress
+    applymovement(OBJ_EVENT_ID_PLAYER, AfterHeal)
+    release
+    end
+}
+
+movement AfterHeal {
+    face_down
+}

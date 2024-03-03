@@ -50,9 +50,9 @@
 #define VAR_RECYCLE_GOODS                                0x4020
 #define VAR_REPEL_STEP_COUNT                             0x4021
 #define VAR_ICE_STEP_COUNT                               0x4022
-#define VAR_STARTER_MON                                  0x4023 // 0=Treecko, 1=Torchic, 2=Mudkip
-#define VAR_MIRAGE_RND_H                                 0x4024
-#define VAR_MIRAGE_RND_L                                 0x4025
+#define VAR_STARTER_MON                                  0x4023 // used
+#define VAR_NEED_TO_SELECT_MON                           0x4024 // used
+#define VAR_MOM_DIALOGUE                                 0x4025 // used
 #define VAR_SECRET_BASE_MAP                              0x4026
 #define VAR_CYCLING_ROAD_RECORD_COLLISIONS               0x4027
 #define VAR_CYCLING_ROAD_RECORD_TIME_L                   0x4028
@@ -264,10 +264,10 @@
 #define VAR_ROXANNE_CALL_STEP_COUNTER                    0x40F4
 #define VAR_SCOTT_BF_CALL_STEP_COUNTER                   0x40F5
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER             0x40F6
-#define VAR_UNUSED_0x40F7                                0x40F7 // Unused Var
-#define VAR_UNUSED_0x40F8                                0x40F8 // Unused Var
-#define VAR_UNUSED_0x40F9                                0x40F9 // Unused Var
-#define VAR_UNUSED_0x40FA                                0x40FA // Unused Var
+#define VAR_MIRAGE_RND_H                                 0x40F7 // 
+#define VAR_MIRAGE_RND_L                                 0x40F8 // 
+#define VAR_NEWGAME_START                                0x40F9 // 
+#define VAR_LEVEL_CAP                                    0x0000 // LEVEL CAP
 #define VAR_UNUSED_0x40FB                                0x40FB // Unused Var
 #define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
 #define VAR_UNUSED_0x40FD                                0x40FD // Unused Var

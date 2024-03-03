@@ -1,0 +1,8 @@
+mapscripts SantaluneForest_MapScripts {}
+
+script Santalune_Forest_SignScript_Enter {
+    lockall
+    msgbox(format("This is Santalune Forest.\nKeep an eye out for dropped items!"))
+    waitmessage
+    release
+}

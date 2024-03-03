@@ -1,0 +1,22 @@
+mapscripts Opening_Scene_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: RemovePlayerSprite
+
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_NEWGAME_START, 0: NewGameIntro
+    ]
+}
+
+
+script NewGameIntro {
+    msgbox("{PLAYER}!")
+    msgbox(format("Your package from Professor Sycamore is here!"))
+    msgbox("...")
+    msgbox(format("It's your big day and you seriously want to sleep in? Get up!"))
+    waitmessage
+    warp(MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F, 1, 4)
+}
+
+
+script RemovePlayerSprite {
+    setflag(FLAG_SPAWN_INVISIBLE)
+}
